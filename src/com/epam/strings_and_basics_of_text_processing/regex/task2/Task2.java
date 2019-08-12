@@ -1,6 +1,5 @@
 package com.epam.strings_and_basics_of_text_processing.regex.task2;
 
-
 /*
 Напишите анализатор, позволяющий последовательно возвращать содержимое узлов xml-документа и его тип (открывающий
 тег, закрывающий тег, содержимое тега, тег без тела). Пользоваться готовыми парсерами XML для решения данной задачи
@@ -35,10 +34,10 @@ public class Task2 {
         Matcher matcher = pattern.matcher(xml);
 
         while (matcher.find()) {
-            if (matcher.group("openTag") != null && matcher.group("close") != null) {
-                System.out.println(" Открывающий тег: " + matcher.group("openTag") + "\n тело тега: " + matcher.group("body") + "\n закрывающий тег: " + matcher.group("close"));
+            if (matcher.group("openTag") != null && matcher.group("closeTag") != null) {
+                System.out.println(" Открывающий тег: " + matcher.group("openTag") + "\n тело тега: " + matcher.group("body") + "\n закрывающий тег: " + matcher.group("closeTag"));
 
-            } else if (matcher.group("close") == null && matcher.group("openOnly") != null) {
+            } else if (matcher.group("closeTag") == null && matcher.group("openOnly") != null) {
                 System.out.println("Открывающий тег(only): " + matcher.group("openOnly"));
             } else if (matcher.group("openTag") == null && matcher.group("closeOnly") != null) {
                 System.out.println("Закрывающий тег: " + matcher.group("closeOnly"));
