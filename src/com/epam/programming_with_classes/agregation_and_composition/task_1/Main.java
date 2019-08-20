@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Text text = new Text("Text", "title");
 
-        text.addSentence(new Sentence("New sentense"));
+        text.addSentence(new Sentence("New sentence"));
 
     }
 }
