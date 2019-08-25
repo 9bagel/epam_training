@@ -2,4 +2,4 @@
 >- [2 - Conditions - Ветвления](https://github.com/9bagel/epam_training/tree/master/src/com/epam/basics_of_software_code_development/condition)
 >- [3 - Loops - Циклы](https://github.com/9bagel/epam_training/tree/master/src/com/epam/basics_of_software_code_development/loop)
 
->- [Answers - Ответы на вопросы](https://github.com/9bagel/epam_training/tree/master/src/com/epam/basics_of_software_code_development/Answers.doc)
+>- [Answers - Ответы на вопросы](https://github.com/9bagel/epam_training/tree/master/src/com/epam/basics_of_software_code_development/Answers.docx)
