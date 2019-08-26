@@ -5,3 +5,4 @@
 >- [3 - Sorting](https://github.com/9bagel/epam_training/tree/master/src/com/epam/algorithmization/sort)
 >- [4 - Decomposition](https://github.com/9bagel/epam_training/tree/master/src/com/epam/algorithmization/decomposition)
 
+>- [Answers - Ответы на вопросы](https://github.com/9bagel/epam_training/tree/master/src/com/epam/algorithmization/Answers.pdf)
