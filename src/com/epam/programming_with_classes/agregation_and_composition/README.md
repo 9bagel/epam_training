@@ -1,0 +1,6 @@
+[Agregation and composition](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition)
+>- [Task 1](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition/task_1)
+>- [Task 2](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition/vehicle)
+>- [Task 3](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition/state)
+>- [Task 4](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition/customer)
+>- [Task 5](https://github.com/9bagel/epam_training/tree/master/src/com/epam/programming_with_classes/agregation_and_composition/travel)
