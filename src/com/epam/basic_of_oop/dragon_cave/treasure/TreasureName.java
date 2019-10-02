@@ -7,7 +7,7 @@ public enum TreasureName {
     GOLDEN_CUP,
     GOLDEN,
     SILVER_TABLEWARE,
-    ROYAL_SKYPETER,
+    ROYAL_SCEPTER,
     BELT_DECORATED_WITH_GOLD,
     FUR_GOWN,
     LEAKY_SHIRT,
