@@ -1,6 +1,6 @@
 package com.epam.tasks_6.library.auth;
 
-import com.epam.tasks_6.library.role.User;
+import com.epam.tasks_6.library.user.User;
 
 import java.io.*;
 import java.util.HashMap;

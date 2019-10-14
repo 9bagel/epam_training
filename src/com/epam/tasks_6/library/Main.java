@@ -1,7 +1,8 @@
 package com.epam.tasks_6.library;
 
 import com.epam.tasks_6.library.auth.Authenticator;
-import com.epam.tasks_6.library.role.User;
+import com.epam.tasks_6.library.console.Console;
+import com.epam.tasks_6.library.user.User;
 
 import java.util.Scanner;
 /*
@@ -42,14 +43,15 @@ public class Main {
         } while (choice != 1 && choice != 2);
 
         Authenticator authenticator = new Authenticator();
+        Console console = new Console();
         switch (choice) {
             case 1:
                 user = authenticator.logIn();
-                user.getConsole();
+                console.getConsole(user);
                 break;
             case 2:
                 user = authenticator.signUp();
-                user.getConsole();
+                console.getConsole(user);
                 break;
             default:
                 System.out.println("Что-то пошло не так");

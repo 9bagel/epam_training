@@ -1,59 +1,26 @@
-package com.epam.tasks_6.library.role;
+package com.epam.tasks_6.library.console;
 
 import com.epam.tasks_6.library.book.Book;
-import com.epam.tasks_6.library.book.BookType;
 import com.epam.tasks_6.library.catalog.Catalog;
 import com.epam.tasks_6.library.mail.EmailHandler;
+import com.epam.tasks_6.library.user.User;
 
 import java.util.Scanner;
 
-public class User {
-    private String userName;
-    private int passwordHash;
-    private boolean isAdmin;
+public class Console {
     private Scanner scanner = new Scanner(System.in);
     private Catalog catalog = Catalog.getInstance();
     private EmailHandler emailHandler = EmailHandler.getInstance();
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public int getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(int passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
-
-    public User(String userName, int passwordHash, boolean isAdmin) {
-        this.userName = userName;
-        this.passwordHash = passwordHash;
-        this.isAdmin = isAdmin;
-    }
-
-    public void getConsole() {
-        if (isAdmin) {
-            getAdminConsole();
+    public void getConsole(User user) {
+        if (user.isAdmin()) {
+            getAdminConsole(user);
         } else {
-            getUserConsole();
+            getUserConsole(user);
         }
     }
 
-    public void getUserConsole() {
+    private void getUserConsole(User user) {
 
         int choice;
         while (true) {
@@ -88,7 +55,7 @@ public class User {
                     }
                     break;
                 case 3:
-                    emailHandler.sendEmail(Book.createBookFromConsole(), userName);
+                    emailHandler.sendEmail(Book.createBookFromConsole(), user.getUserName());
                     break;
                 case 0:
                     return;
@@ -98,8 +65,7 @@ public class User {
         }
     }
 
-    public void getAdminConsole() {
-
+    private void getAdminConsole(User user) {
         int choice;
         while (true) {
             do {
