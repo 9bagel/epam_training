@@ -48,18 +48,18 @@ public class Ship implements Runnable {
     public void loadContainers(int numOfContainers) {
 
         if (this.numOfContainers + numOfContainers > capacity) {
-            System.out.printf("Cannot load so many containers the max available amount is: %s but you want to load %s for %s\n", (capacity - this.numOfContainers), numOfContainers, getName());
+            System.out.printf("(%s) - Cannot load so many containers the max available amount is: %s but you want to load %s \n", getName(), numOfContainers, (capacity - this.numOfContainers));
         } else {
             System.out.printf("(%s) - is now loading\n", this.name);
             try {
-                Harbor.getBerth(numOfContainers);
+
                 Thread.sleep(numOfContainers * 10);
-                Harbor.freeBerth(numOfContainers);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             this.numOfContainers += numOfContainers;
-            System.out.printf("Containers were successfully loaded, remaining amount is %d for %s\n", (capacity - this.numOfContainers), getName());
+            System.out.printf("(%s) - Containers were successfully loaded, remaining amount is %d \n", getName(), (capacity - this.numOfContainers));
         }
     }
 

@@ -10,16 +10,16 @@ package com.epam.tasks_6.harbor;
  */
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Harbor harbor = new Harbor(10000, 3);
 
-        Ship ship1 = new Ship(1000, "ship1", 800,true);
+        Ship ship1 = new Ship(1000, "ship1", 800, true);
         Ship ship2 = new Ship(3000, "ship2", 2000, true);
-        Ship ship3 = new Ship(4000, "ship3", 3000,false);
-        Ship ship4 = new Ship(3000, "ship4", 2500,true);
-        Ship ship5 = new Ship(2000, "ship5", 1500,false);
-        Ship ship6 = new Ship(1000, "ship6", 800,false);
-        Ship ship7 = new Ship(8000, "ship7", 8000,true);
+        Ship ship3 = new Ship(4000, "ship3", 3000, false);
+        Ship ship4 = new Ship(3000, "ship4", 2500, true);
+        Ship ship5 = new Ship(2000, "ship5", 1500, false);
+        Ship ship6 = new Ship(1000, "ship6", 800, false);
+        Ship ship7 = new Ship(8000, "ship7", 8000, true);
 
         harbor.addShipForLoading(ship1, 200);
         harbor.addShipForLoading(ship2, 800);

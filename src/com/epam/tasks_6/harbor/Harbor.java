@@ -46,6 +46,7 @@ public class Harbor {
                 getBerth(containersNum);
                 ship.loadContainers(containersNum);
                 freeBerth(containersNum);
+                System.out.printf("(%s) - containers were loaded \n", ship.getName());
             }
         };
         thread.start();
@@ -66,19 +67,19 @@ public class Harbor {
                 getBerth(containersNum);
                 ship.unloadContainers(containersNum);
                 freeBerth(containersNum);
-                System.out.printf("containers were unload for %s\n", ship.getName());
+                System.out.printf("(%s) - containers were unloaded \n", ship.getName());
             }
         };
         thread.start();
 
     }
 
-    public static synchronized void getBerth(int containersNum) {
+    private synchronized void getBerth(int containersNum) {
         containersInHarbor += containersNum;
         shipsInHarbor++;
     }
 
-    public static synchronized void freeBerth(int containersNum) {
+    private synchronized void freeBerth(int containersNum) {
         containersInHarbor -= containersNum;
         shipsInHarbor--;
     }
