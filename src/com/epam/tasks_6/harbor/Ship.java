@@ -19,7 +19,6 @@ public class Ship implements Runnable {
         this.name = name;
         this.numOfContainers = numOfContainers;
         this.onLoad = onLoad;
-        run();
     }
 
     public int getCapacity() {
@@ -48,9 +47,10 @@ public class Ship implements Runnable {
 
     public void loadContainers(int numOfContainers) {
 
-        if (Ship.this.getNumOfContainers() + numOfContainers > capacity) {
-            System.out.printf("Cannot load so many containers the max available amount is: %s but you want to load %s for %s\n", (capacity - Ship.this.numOfContainers), numOfContainers, getName());
+        if (this.numOfContainers + numOfContainers > capacity) {
+            System.out.printf("Cannot load so many containers the max available amount is: %s but you want to load %s for %s\n", (capacity - this.numOfContainers), numOfContainers, getName());
         } else {
+            System.out.printf("(%s) - is now loading\n", this.name);
             try {
                 Harbor.getBerth(numOfContainers);
                 Thread.sleep(numOfContainers * 10);
@@ -58,39 +58,34 @@ public class Ship implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Ship.this.numOfContainers += numOfContainers;
-            System.out.printf("Containers were successfully loaded, remaining amount is %d for %s\n", (capacity - Ship.this.numOfContainers), getName());
+            this.numOfContainers += numOfContainers;
+            System.out.printf("Containers were successfully loaded, remaining amount is %d for %s\n", (capacity - this.numOfContainers), getName());
         }
     }
 
 
     public void unloadContainers(int numOfContainers) {
-        int amount = 0;
-
-        if (numOfContainers > Ship.this.numOfContainers) {
+        System.out.printf("(%s) - is now unloading\n", this.name);
+        if (numOfContainers > this.numOfContainers) {
 
             try {
 
-                Harbor.getBerth(Ship.this.numOfContainers);
-                Thread.sleep(Ship.this.numOfContainers * 2);
-                Harbor.freeBerth(Ship.this.numOfContainers);
+                Thread.sleep(this.numOfContainers * 2);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            amount = Ship.this.numOfContainers;
-            Ship.this.numOfContainers = 0;
+            this.numOfContainers = 0;
 
         } else {
             try {
-                Harbor.getBerth(numOfContainers);
+
                 Thread.sleep(numOfContainers * 2);
-                Harbor.freeBerth(numOfContainers);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Ship.this.numOfContainers -= numOfContainers;
-            amount = numOfContainers;
+            this.numOfContainers -= numOfContainers;
         }
     }
 

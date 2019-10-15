@@ -31,28 +31,45 @@ public class Harbor {
         this.berthCount = berthCount;
     }
 
-    public void addShipForLoading(Ship ship, int containersNum) throws InterruptedException {
-
-        while (shipsInHarbor + 1 > berthCount || containersInHarbor + containersNum > capacity) {
-            System.out.printf("Message for ship %s\n", ship.getName());
-            System.out.println("All berth are busy or not enough capacity left. We will try again in 10 sec");
-            Thread.sleep(10000);
-        }
-
-        ship.loadContainers(containersNum);
+    public void addShipForLoading(Ship ship, int containersNum) {
+        Thread thread = new Thread(ship) {
+            @Override
+            public void run() {
+                while (shipsInHarbor + 1 > berthCount || containersInHarbor + containersNum > capacity) {
+                    System.out.printf("(%s) - All berth are busy or not enough capacity left. We will try again in 10 sec \n", ship.getName());
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                getBerth(containersNum);
+                ship.loadContainers(containersNum);
+                freeBerth(containersNum);
+            }
+        };
+        thread.start();
     }
 
-    public void addShipForUnloading(Ship ship, int containersNum) throws InterruptedException {
-
-        while (shipsInHarbor + 1 > berthCount || containersInHarbor + containersNum > capacity) {
-            System.out.printf("Message for ship %s\n", ship.getName());
-            System.out.println("All berth are busy or not enough capacity left. We will try again in 10 sec");
-            Thread.sleep(10000);
-        }
-
-        ship.unloadContainers(containersNum);
-
-        System.out.printf("containers were unload for %s\n", ship.getName());
+    public void addShipForUnloading(Ship ship, int containersNum) {
+        Thread thread = new Thread(ship) {
+            @Override
+            public void run() {
+                while (shipsInHarbor + 1 > berthCount || containersInHarbor + containersNum > capacity) {
+                    System.out.printf("(%s) - All berth are busy or not enough capacity left. We will try again in 10 sec \n", ship.getName());
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                getBerth(containersNum);
+                ship.unloadContainers(containersNum);
+                freeBerth(containersNum);
+                System.out.printf("containers were unload for %s\n", ship.getName());
+            }
+        };
+        thread.start();
 
     }
 
