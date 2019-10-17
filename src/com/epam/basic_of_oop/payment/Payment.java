@@ -12,7 +12,7 @@ public class Payment {
     private Map<Product, Integer> productsList = new HashMap<>();
 
     //Покупка определённого товара
-    void purchase(Product product, int amount) {
+    public void purchase(Product product, int amount) {
         productsList.put(product, amount);
     }
 
@@ -25,11 +25,11 @@ public class Payment {
     }
 
     //Покупка нескольких продуктов
-    void purchase(Map<Product, Integer> productsList) {
+    public void purchase(Map<Product, Integer> productsList) {
         this.productsList.putAll(productsList);
     }
     //Определяем общую стоимость
-    double getTotalAmount() {
+    public double getTotalAmount() {
         return productsList.entrySet().stream()
                 .mapToDouble(productsList -> productsList.getKey().getPrice() * productsList.getValue()).sum();
     }

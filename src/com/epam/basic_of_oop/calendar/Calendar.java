@@ -38,11 +38,15 @@ public class Calendar {
         private int month;
 
         public Holiday(String holidayName, int day, int month) {
+
             if (holidayName == null) {
                 System.out.println("У праздничного дня должно быть имя");
+
             } else if (month <= 0 || day < 0 || month > 12 || day > 31) {
                 System.out.println("Проверьте корректность даты");
+
             } else {
+
                 this.holidayName = holidayName;
                 this.day = day;
                 this.month = month;
@@ -54,8 +58,10 @@ public class Calendar {
         }
 
         public void setHolidayName(String holidayName) {
+
             if (holidayName == null) {
                 System.out.println("У праздничного дня должно быть имя");
+
             } else {
                 this.holidayName = holidayName;
             }
@@ -66,8 +72,10 @@ public class Calendar {
         }
 
         public void setDay(int day) {
+
             if (day > 31 || day < 0) {
                 System.out.println("Проверьте правильность даты");
+
             } else {
                 this.day = day;
             }
@@ -78,8 +86,10 @@ public class Calendar {
         }
 
         public void setMonth(int month) {
+
             if (month > 12 | month < 0) {
                 System.out.println("Проверьте правильность месяца");
+
             } else {
                 this.month = month;
             }
@@ -87,6 +97,7 @@ public class Calendar {
 
         @Override
         public String toString() {
+
             return "Holiday{" +
                     "holidayName='" + holidayName + '\'' +
                     ", day=" + day +

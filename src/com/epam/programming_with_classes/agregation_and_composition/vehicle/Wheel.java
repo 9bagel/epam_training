@@ -5,8 +5,8 @@ package com.epam.programming_with_classes.agregation_and_composition.vehicle;
 менять колесо, вывести на консоль марку автомобиля.
  */
 public class Wheel {
-    int size;
-    String brand;
+    private int size;
+    private String brand;
 
     public Wheel(int size, String brand) {
         this.size = size;

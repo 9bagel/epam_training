@@ -23,8 +23,6 @@ public class Task6 {
 
         System.out.println("Nod = " + nod);
 
-        if (nod == 1) {
-            return true;
-        } else return false;
+        return nod == 1;
     }
 }

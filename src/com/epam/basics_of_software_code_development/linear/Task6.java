@@ -11,8 +11,10 @@ public class Task6 {
     }
 
     private static void solution(int x, int y) {
+
         if (x >= -4 && x <= 4 && y >= -3 && y <= 4)
             System.out.println("true");
+
         else System.out.println("false");
     }
 }

@@ -14,6 +14,7 @@ public class Task2 {
         StringBuilder stringBuilder = new StringBuilder(text);
 
         for (int i = 0; i < stringBuilder.length(); i++) {
+
             if (stringBuilder.charAt(i) == 'a')
                 stringBuilder.insert(i + 1, 'b');
         }

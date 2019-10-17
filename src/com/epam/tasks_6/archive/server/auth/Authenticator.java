@@ -32,10 +32,6 @@ public class Authenticator {
         }
     }
 
-    public void endJob() throws FileNotFoundException, XMLStreamException {
-        userHandler.writeUserData();
-    }
-
     public User signUp() throws IOException, XMLStreamException {
         while (true) {
             String userName = console.sendCommandWithResponse("Enter username");

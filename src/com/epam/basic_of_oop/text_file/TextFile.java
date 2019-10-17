@@ -11,29 +11,29 @@ public class TextFile {
     private String content;
 
     //Конструктор, в качестве метода для создания файла
-    TextFile(Directory directory, File file, String content) {
+    public TextFile(Directory directory, File file, String content) {
         this.directory = directory;
         this.file = file;
         this.content = content;
     }
 
     //Метод для переименования
-    void renameFile(String newName) {
+    public void renameFile(String newName) {
         file.setName(newName);
     }
 
     //Вывести на консоль содержимое
-    void printContent() {
+    public void printContent() {
         System.out.println(content);
     }
 
     //Дополнить содержимое (можно поменять на StringBuilder, если будет часто использоваться)
-    void addContent(String content) {
+    public void addContent(String content) {
         this.content += " " + content;
     }
 
     //Удалить файл
-    void removeFile() {
+    public void removeFile() {
         directory = null;
         file = null;
         content = null;

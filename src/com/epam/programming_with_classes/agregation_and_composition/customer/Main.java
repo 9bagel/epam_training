@@ -9,20 +9,23 @@ import java.util.Arrays;
  */
 public class Main {
     public static void main(String[] args) {
+
         BankAccount bankAccount1 = new BankAccount(true, 123, "BankOfAmerica", 12);
         BankAccount bankAccount2 = new BankAccount(true, -34123, "BankOfAmerica", 4);
 
         Customer customer = new Customer("Jane", "Borph", new BankAccount[]{bankAccount1, bankAccount2});
 
-        customer.blockBankAccount(12);
+        CustomerHandler customerHandler = new CustomerHandler();
+
+        customerHandler.blockBankAccount(customer, 12);
 
         System.out.println(Arrays.toString(customer.getBankAccounts()));
 
-        System.out.println(customer.findBankAccount(12));
+        System.out.println(customerHandler.findBankAccount(customer, 12));
 
-        customer.printAccountsSummary();
+        customerHandler.printAccountsSummary(customer);
 
-        customer.printNegativeAccountsSummary();
+        customerHandler.printNegativeAccountsSummary(customer);
 
     }
 }

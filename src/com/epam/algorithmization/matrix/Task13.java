@@ -9,9 +9,9 @@ public class Task13 {
     public static void main(String[] args) {
     }
 
-    private static void solution(double[][] matrix) {
+    //Сортировка по возрастанию
+    private static void sortAscending(double[][] matrix) {
 
-//Сортировка по возрастанию
         for (int i = 0; i < matrix.length; i++) {
             double temp;
             boolean isSorted = false;
@@ -29,8 +29,10 @@ public class Task13 {
             }
 
         }
+    }
 
-//Сортировка по убыванию
+    //Сортировка по убыванию
+    private static void sortDescending(double[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             double temp;
             boolean isSorted = false;

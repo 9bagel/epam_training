@@ -9,6 +9,7 @@ public class Task2 {
     }
 
     private static String replaceWord(String text) {
+
         text = text.replaceAll("word", "letter");
 
         return text;

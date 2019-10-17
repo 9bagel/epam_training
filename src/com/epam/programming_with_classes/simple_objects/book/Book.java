@@ -11,14 +11,14 @@ b) список книг, выпущенных заданным издатель
 c) список книг, выпущенных после заданного года.
  */
 public class Book {
-    int id;
-    String name;
-    String authors;
-    String publisher;
-    int year;
-    int pageCount;
-    double price;
-    String bindingType;
+    private int id;
+    private String name;
+    private String authors;
+    private String publisher;
+    private int year;
+    private int pageCount;
+    private double price;
+    private String bindingType;
 
     public static void main(String[] args) {
 

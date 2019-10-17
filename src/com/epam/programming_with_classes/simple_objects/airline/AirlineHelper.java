@@ -20,15 +20,15 @@ public class AirlineHelper {
 
     private Airline[] airlines = createAirLines();
 
-    void printByDestinationName(String destinationName) {
+    public void printByDestinationName(String destinationName) {
         Stream.of(airlines).filter(airline -> airline.getDestination().equals(destinationName)).forEach(System.out::println);
     }
 
-    void printByDayOfWeek(Enum<DayOfWeek> dayOfWeekEnum) {
+    public void printByDayOfWeek(Enum<DayOfWeek> dayOfWeekEnum) {
         Stream.of(airlines).filter(airline -> airline.getDayOfWeek().equals(dayOfWeekEnum)).forEach(System.out::println);
     }
 
-    void printByDayOfWeekAndTime(Enum<DayOfWeek> dayOfWeekEnum, String time) {
+    public void printByDayOfWeekAndTime(Enum<DayOfWeek> dayOfWeekEnum, String time) {
 
         Date date = null;
         try {
@@ -38,7 +38,11 @@ public class AirlineHelper {
         }
 
         Date finalDate = date;
-        Stream.of(airlines).filter(airline -> airline.getDayOfWeek().equals(dayOfWeekEnum) && airline.getDepartureTime().after(finalDate)).forEach(System.out::println);
+        Stream.of(airlines).filter(airline -> airline.getDayOfWeek()
+                .equals(dayOfWeekEnum)
+                && airline.getDepartureTime()
+                .after(finalDate))
+                .forEach(System.out::println);
     }
 
     private Airline[] createAirLines() {

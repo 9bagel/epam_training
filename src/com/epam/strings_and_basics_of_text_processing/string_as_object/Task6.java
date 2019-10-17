@@ -10,6 +10,7 @@ public class Task6 {
     }
 
     private static String doubleEveryChar(String text) {
+
         if (text.isEmpty()) {
             return null;
         }
@@ -18,6 +19,7 @@ public class Task6 {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < stringBuilder.length(); i++) {
+
             result.append(stringBuilder.charAt(i));
             result.append(stringBuilder.charAt(i));
         }

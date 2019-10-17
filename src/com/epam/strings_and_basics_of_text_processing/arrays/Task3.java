@@ -17,6 +17,7 @@ public class Task3 {
         char[] symbols = text.toCharArray();
 
         for (char symbol : symbols) {
+
             if (Character.isDigit(symbol)) {
                 digitsCount++;
             }

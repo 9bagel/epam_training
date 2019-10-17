@@ -10,7 +10,7 @@ public class Vehicle {
     private int fuelLvl;
     private String carModel;
 
-    Vehicle(Wheel wheel, Engine engine, String carModel) {
+    public Vehicle(Wheel wheel, Engine engine, String carModel) {
         this.wheel = wheel;
         this.engine = engine;
         this.carModel = carModel;
@@ -41,35 +41,40 @@ public class Vehicle {
         this.engine = engine;
     }
 
-    void drive() {
+    public void drive() {
 
         if (fuelLvl != 0) {
             System.out.println("Поехали!");
             //Каждый час поездки будет отнимать объём двигателя * 3 литров топлива)
+
             while (fuelLvl > 0) {
                 fuelLvl -= 3 * engine.getEngineCapacity();
+
                 try {
                     Thread.sleep(1000);
                     System.out.println("Едем, едем...");
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
         } else {
+
             System.out.println("Нужно заправиться");
             fuelLvl = 0;
         }
     }
 
-    void refuel(int fuelAmount) {
+    public void refuel(int fuelAmount) {
 
         if (fuelLvl + fuelAmount > this.engine.getTankCapacity()) {
             System.out.printf("Можно залить только %d литров топлива", this.engine.getTankCapacity() - fuelLvl);
+
         } else fuelLvl += fuelAmount;
     }
 
-    void printCarModel() {
+    public void printCarModel() {
         System.out.println(carModel);
     }
 }

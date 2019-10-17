@@ -12,6 +12,7 @@ public class Task5 {
     private static int countA(String text) {
         int count = 0;
         int index = text.length();
+
         while (--index != 0) {
 
             if (text.charAt(index) == 'а') {

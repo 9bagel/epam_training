@@ -6,6 +6,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
+
     public void startClient() {
         try (Socket socket = new Socket("localhost", 8080);
              BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));

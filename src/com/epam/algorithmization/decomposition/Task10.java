@@ -8,10 +8,10 @@ import java.util.Arrays;
  */
 public class Task10 {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(creatAnArrayFromNumber(459098765)));
+        System.out.println(Arrays.toString(createAnArrayFromNumber(459098765)));
     }
 
-    private static int[] creatAnArrayFromNumber(int number) {
+    private static int[] createAnArrayFromNumber(int number) {
         int arraySize = 0;
         int[] array;
 

@@ -10,8 +10,10 @@ public class Task3 {
     }
 
     private static void solution(int x1, int y1, int x2, int y2, int x3, int y3) {
+
         if ((x3 - x1) / (x2 - x1) == (y3 - y1) / (y2 - y1)) {
             System.out.println("Лежат на одной прямой");
+
         } else System.out.println("Не лежат на одной прямой");
     }
 }

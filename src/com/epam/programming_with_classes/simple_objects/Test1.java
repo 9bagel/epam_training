@@ -12,24 +12,24 @@ public class Test1 {
 
     }
 //метод вывода на экран
-    void print() {
+   public void print() {
         System.out.println(var1);
         System.out.println(var2);
     }
 //методы изменения этих переменных
-    void changeVar1(int newVar1) {
+   public void changeVar1(int newVar1) {
         var1 = newVar1;
     }
 
-    void changeVar2(int newVar2) {
+   public void changeVar2(int newVar2) {
         var2 = newVar2;
     }
 //метод, который находит сумму значений этих переменных
-    int findSum() {
+   public int findSum() {
         return var1 + var2;
     }
 //метод, который находит наибольшее значение из этих двух переменных
-    int findGreatest() {
+   public int findGreatest() {
         return Math.max(var1, var2);
     }
 }

@@ -13,6 +13,7 @@ public class Task4 {
         String resultText = "";
 
         if (text.contains("т") && text.contains("о") && text.contains("р")) {
+
             resultText = resultText.concat(String.copyValueOf(text.toCharArray(), text.indexOf('т'), 1));
             resultText = resultText.concat(String.copyValueOf(text.toCharArray(), text.indexOf('о'), 1));
             resultText = resultText.concat(String.copyValueOf(text.toCharArray(), text.indexOf('р'), 1));

@@ -9,7 +9,7 @@ class Sort {
     private Spliter spliter = new Spliter();
 
     //отсортировать абзацы по количеству предложений
-    void bySentenceCount(String text) {
+    public void bySentenceCount(String text) {
         String[] paragraphs = spliter.splitByParagraph(text);
 
         Arrays.sort(paragraphs, (paragraph1, paragraph2) ->
@@ -19,7 +19,7 @@ class Sort {
     }
 
     //в каждом предложении отсортировать слова по длине
-    void byWordLength(String text) {
+    public void byWordLength(String text) {
         String[] paragraphs = spliter.splitByParagraph(text);
 
         for (int i = 0; i < paragraphs.length; i++) {

@@ -6,7 +6,7 @@ class StartProgram {
 
     private String text;
 
-    StartProgram(String text) {
+    public StartProgram(String text) {
         this.text = text;
         chooseAnOption();
     }

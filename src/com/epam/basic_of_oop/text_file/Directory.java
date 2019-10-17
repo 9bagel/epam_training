@@ -8,7 +8,7 @@ public class Directory {
     private String name;
     private String path;
 
-    Directory(String name, String path) {
+    public Directory(String name, String path) {
         this.name = name;
         this.path = path;
     }

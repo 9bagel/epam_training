@@ -22,9 +22,11 @@ public class Task1 {
         char[] snakeCaseSymbols = new char[camelCaseSymbols.length + upperCaseCount];
 
         for (int i = 0, j = 0; i < camelCaseSymbols.length; i++, j++) {
+
             if (Character.isUpperCase(camelCaseSymbols[i])) {
                 snakeCaseSymbols[j] = '_';
                 snakeCaseSymbols[++j] = Character.toLowerCase(camelCaseSymbols[i]);
+
             } else {
                 snakeCaseSymbols[j] = camelCaseSymbols[i];
             }
@@ -39,6 +41,7 @@ public class Task1 {
         int upperCaseCount = 0;
 
         for (char symbol : symbols) {
+
             if (Character.isUpperCase(symbol)) {
                 upperCaseCount++;
             }

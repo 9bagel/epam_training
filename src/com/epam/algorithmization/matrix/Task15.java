@@ -10,6 +10,7 @@ public class Task15 {
 
     private static void solution(double[][] matrix) {
         double max = matrix[0][0];
+
 //Находим max значение
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {

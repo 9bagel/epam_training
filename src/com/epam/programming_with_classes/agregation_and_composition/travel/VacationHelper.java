@@ -12,37 +12,37 @@ import java.util.stream.Collectors;
 public class VacationHelper {
     private ArrayList<Vacation> vacations = new ArrayList<>();
 
-    void addVacation(Vacation vacation) {
+    public void addVacation(Vacation vacation) {
         vacations.add(vacation);
     }
 
-    ArrayList<Vacation> getVacations() {
+    public ArrayList<Vacation> getVacations() {
         return vacations;
     }
 
-    ArrayList<Vacation> getVacationsByType(VacationType vacationType) {
+    public ArrayList<Vacation> getVacationsByType(VacationType vacationType) {
         return vacations.stream()
                 .filter(vacation -> vacation.getVacationType().equals(vacationType))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    ArrayList<Vacation> getVacationsByTransport(String transportType) {
+    public ArrayList<Vacation> getVacationsByTransport(String transportType) {
         return vacations.stream()
                 .filter(vacation -> vacation.getTransportType().equals(transportType))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    ArrayList<Vacation> getVacationsByNumberOfDays(int numberOfDays) {
+    public ArrayList<Vacation> getVacationsByNumberOfDays(int numberOfDays) {
         return vacations.stream()
                 .filter(vacation -> vacation.getNumberOfDays() == numberOfDays)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    void sortVacationsByCountry() {
+    public void sortVacationsByCountry() {
         vacations.sort(Comparator.comparing(Vacation::getCountry));
     }
 
-    void printAllVacations() {
+    public void printAllVacations() {
         vacations.forEach(System.out::println);
     }
 }

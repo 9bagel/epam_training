@@ -6,36 +6,13 @@ package com.epam.programming_with_classes.simple_objects.customer;
 и методами. Задать критерии выбора данных и вывести эти данные на консоль.
  */
 public class Customer {
-    int id;
-    String lastName;
-    String name;
-    String middleName;
-    String address;
-    int creditNumber;
-    int bankNumber;
-
-    public static void main(String[] args) {
-
-        Customer[] customers = new Customer[]{
-                new Customer(11, "Bush", "John", "Malkovich", "city Washington", 339, 679011),
-                new Customer(10, "Antonov", "Ivan", "Petrovich", "city Samara", 555, 439290),
-                new Customer(12, "Kennedy", "Jack", "Maktavish", "city Boston", 450, 383567)};
-        CustomerHelper base = new CustomerHelper(customers);
-        base.printByCreditCardNumber(300, 400);
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", name='" + name + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", address='" + address + '\'' +
-                ", creditNumber=" + creditNumber +
-                ", bankNumber=" + bankNumber +
-                '}';
-    }
+    private int id;
+    private String lastName;
+    private String name;
+    private String middleName;
+    private String address;
+    private int creditNumber;
+    private int bankNumber;
 
     public Customer(int id, String lastName, String name, String middleName, String address, int creditNumber, int bankNumber) {
         this.id = id;
@@ -101,5 +78,18 @@ public class Customer {
 
     public void setBankNumber(int bankNumber) {
         this.bankNumber = bankNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", address='" + address + '\'' +
+                ", creditNumber=" + creditNumber +
+                ", bankNumber=" + bankNumber +
+                '}';
     }
 }

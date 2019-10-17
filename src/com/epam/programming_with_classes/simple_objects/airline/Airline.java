@@ -74,6 +74,7 @@ public class Airline {
 
         try {
             return new SimpleDateFormat("hh:mm:ss dd/MM/yyyy").parse(departureTime);
+
         } catch (ParseException e) {
             e.printStackTrace();
             return null;

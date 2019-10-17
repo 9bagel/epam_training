@@ -17,21 +17,21 @@ public class BookHelper {
     Book[] books = createBooks();
 
     //список книг заданного автора;
-    void printAuthorBooks(String author) {
+    public void printAuthorBooks(String author) {
         Stream.of(books).filter(book -> book.getAuthors().equals(author)).forEach(System.out::println);
     }
 
     //список книг, выпущенных заданным издательством;
-    void printPublisherBooks(String publisher) {
+    public void printPublisherBooks(String publisher) {
         Stream.of(books).filter(book -> book.getPublisher().equals(publisher)).forEach(System.out::println);
     }
 
     //список книг, выпущенных после заданного года.
-    void printBooksAfterYear(int year) {
+    public void printBooksAfterYear(int year) {
         Stream.of(books).filter(book -> book.getYear() >= year).forEach(System.out::println);
     }
 
-    Book[] createBooks() {
+    public Book[] createBooks() {
 
         Book[] books = new Book[5];
 

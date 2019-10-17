@@ -12,7 +12,7 @@ public class Task8 {
 
     }
 
-    private static void solution(int[] a) {
+    private int[] solution(int[] a) {
 
         int min = a[0];
 
@@ -31,6 +31,8 @@ public class Task8 {
                 j++;
             }
         }
+
+        return newArray;
 
     }
 }

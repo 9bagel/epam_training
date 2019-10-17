@@ -1,6 +1,5 @@
 package com.epam.basic_of_oop.dragon_cave.treasure;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Treasure {
